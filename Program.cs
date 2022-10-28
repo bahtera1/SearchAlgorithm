@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SearchAlgorithm
 {
@@ -80,9 +76,40 @@ namespace SearchAlgorithm
 
             } while ((ch == 'y')||(ch == 'y'));
         }
-       
+        public void LinearSearch()
+        {
+
+            char ch;
+            //search for number compaarison
+            int ctr;
+            do
+            {
+                //accept the number to be searched
+                Console.Write("\nEnter the element you want to search:");
+                int item= Convert.ToInt32(Console.ReadLine());
+
+                ctr = 0;
+                for (int i = 0; i < n; i++)
+                {
+                    ctr++;
+                    if(arr[i] == item)
+                    {
+                        Console.WriteLine("\n" + item.ToString() + " Found st position" + (i+1).ToString());
+                        break;
+                    }
+                }
+                if (i == n)
+                    Console.WriteLine("\n" + item.ToString() + "Not Found in the Array");
+                Console.WriteLine("\nNumber of comparison:" + ctr);
+                Console.WriteLine("\nCantinue Search(y/n):");
+                ch=char.Parse(Console.ReadLine());
+            } while ((ch == 'y') || (ch == 'Y'));
+
+        }
+
     }
 }
+
 
 
 
